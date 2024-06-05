@@ -15,31 +15,30 @@ const props = defineProps({
     color: String,
     label: String,
     default: () => ({
-      route: "https://www.creative-tim.com/product/vue-material-kit",
       color: "bg-gradient-success",
-      label: "Free Download"
-    })
+      label: "咨询",
+    }),
   },
   transparent: {
     type: Boolean,
-    default: false
+    default: false,
   },
   light: {
     type: Boolean,
-    default: false
+    default: false,
   },
   dark: {
     type: Boolean,
-    default: false
+    default: false,
   },
   sticky: {
     type: Boolean,
-    default: false
+    default: false,
   },
   darkText: {
     type: Boolean,
-    default: false
-  }
+    default: false,
+  },
 });
 
 // set arrow  color
@@ -98,7 +97,7 @@ watch(
       'my-3 blur border-radius-lg z-index-3 py-2 shadow py-2 start-0 end-0 mx-4 position-absolute mt-4':
         props.sticky,
       'navbar-light bg-white py-3': props.light,
-      ' navbar-dark bg-gradient-dark z-index-3 py-3': props.dark
+      ' navbar-dark bg-gradient-dark z-index-3 py-3': props.dark,
     }"
   >
     <div
@@ -112,17 +111,23 @@ watch(
         class="navbar-brand d-none d-md-block"
         :class="[
           (props.transparent && textDark.value) || !props.transparent
-            ? 'text-dark font-weight-bolder ms-sm-3'
-            : 'text-white font-weight-bolder ms-sm-3'
+            ? 'text-dark font-weight-bolder ms-sm-3 '
+            : 'text-white font-weight-bolder ms-sm-3',
         ]"
         :to="{ name: 'presentation' }"
         rel="tooltip"
-        title="Designed and Coded by Creative Tim"
+        title="返回主页"
         data-placement="bottom"
+        :style="{ fontSize: '20px' }"
       >
-        Material Kit 2
+        <img
+          src="../../assets/img/huangsong-logo.png"
+          alt="Description of image"
+          :style="{ width: '50px', height: 'auto', marginTop: '-7px' }"
+        />
+        皇松科技
       </RouterLink>
-      <RouterLink
+      <!-- <RouterLink
         class="navbar-brand d-block d-md-none"
         :class="
           props.transparent || props.dark
@@ -140,8 +145,8 @@ watch(
         href="https://www.creative-tim.com/product/vue-material-kit-pro"
         class="btn btn-sm bg-gradient-success mb-0 ms-auto d-lg-none d-block"
         >Buy Now</a
-      >
-      <button
+      > -->
+      <!-- <button
         class="navbar-toggler shadow-none ms-2"
         type="button"
         data-bs-toggle="collapse"
@@ -155,7 +160,7 @@ watch(
           <span class="navbar-toggler-bar bar2"></span>
           <span class="navbar-toggler-bar bar3"></span>
         </span>
-      </button>
+      </button> -->
       <div
         class="collapse navbar-collapse w-100 pt-3 pb-2 py-lg-0"
         id="navigation"
@@ -175,7 +180,7 @@ watch(
                 :class="getTextColor()"
                 >dashboard</i
               >
-              Pages
+              公司
               <img
                 :src="getArrowColor()"
                 alt="down-arrow"
@@ -198,42 +203,42 @@ watch(
                       <div
                         class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-1"
                       >
-                        Landing Pages
+                        关于公司
                       </div>
                       <RouterLink
                         :to="{ name: 'about' }"
                         class="dropdown-item border-radius-md"
                       >
-                        <span>About Us</span>
+                        <span>简介</span>
                       </RouterLink>
                       <RouterLink
                         :to="{ name: 'contactus' }"
                         class="dropdown-item border-radius-md"
                       >
-                        <span>Contact Us</span>
+                        <span>地址</span>
                       </RouterLink>
                       <RouterLink
                         :to="{ name: 'author' }"
                         class="dropdown-item border-radius-md"
                       >
-                        <span>Author</span>
+                        <span>联系方式</span>
                       </RouterLink>
                       <div
                         class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-0 mt-3"
                       >
-                        Account
+                        相关人员
                       </div>
                       <RouterLink
                         :to="{ name: 'signin-basic' }"
                         class="dropdown-item border-radius-md"
                       >
-                        <span>Sign In</span>
+                        <span>名单</span>
                       </RouterLink>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="d-lg-none">
+              <!-- <div class="d-lg-none">
                 <div
                   class="dropdown-header text-dark font-weight-bolder d-flex align-items-center px-0"
                 >
@@ -268,7 +273,7 @@ watch(
                 >
                   <span>Sign In</span>
                 </RouterLink>
-              </div>
+              </div> -->
             </div>
           </li>
           <li class="nav-item dropdown dropdown-hover mx-2">
@@ -285,7 +290,7 @@ watch(
                 :class="getTextColor()"
                 >view_day</i
               >
-              Sections
+              业务
               <img
                 :src="getArrowColor()"
                 alt="down-arrow"
@@ -318,9 +323,9 @@ watch(
                             <h6
                               class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
                             >
-                              Page Sections
+                              业务1
                             </h6>
-                            <span class="text-sm">See all sections</span>
+                            <span class="text-sm">。。。简介。。。</span>
                           </div>
                           <img
                             :src="downArrow"
@@ -335,13 +340,13 @@ watch(
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'page-headers' }"
                       >
-                        Page Headers
+                        ......
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'page-features' }"
                       >
-                        Features
+                        ......
                       </RouterLink>
                     </div>
                   </li>
@@ -360,9 +365,9 @@ watch(
                             <h6
                               class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
                             >
-                              Navigation
+                              业务2
                             </h6>
-                            <span class="text-sm">See all navigations</span>
+                            <span class="text-sm">。。。简介。。。</span>
                           </div>
                           <img
                             :src="downArrow"
@@ -377,19 +382,19 @@ watch(
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'navigation-navbars' }"
                       >
-                        Navbars
+                        ......
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'navigation-navtabs' }"
                       >
-                        Nav Tabs
+                        ......
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'navigation-pagination' }"
                       >
-                        Pagination
+                        ......
                       </RouterLink>
                     </div>
                   </li>
@@ -408,9 +413,9 @@ watch(
                             <h6
                               class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
                             >
-                              Input Areas
+                              业务3
                             </h6>
-                            <span class="text-sm">See all input areas</span>
+                            <span class="text-sm">。。。简介。。。</span>
                           </div>
                           <img
                             :src="downArrow"
@@ -425,13 +430,13 @@ watch(
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'inputareas-inputs' }"
                       >
-                        Inputs
+                        .......
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'inputareas-forms' }"
                       >
-                        Forms
+                        ......
                       </RouterLink>
                     </div>
                   </li>
@@ -450,9 +455,9 @@ watch(
                             <h6
                               class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
                             >
-                              Attention Catchers
+                              业务4
                             </h6>
-                            <span class="text-sm">See all examples</span>
+                            <span class="text-sm">。。。简介。。。</span>
                           </div>
                           <img
                             :src="downArrow"
@@ -467,19 +472,19 @@ watch(
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'ac-alerts' }"
                       >
-                        Alerts
+                        ......
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'ac-modals' }"
                       >
-                        Modals
+                        ......
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'ac-tooltips-popovers' }"
                       >
-                        Tooltips & Popovers
+                        ......
                       </RouterLink>
                     </div>
                   </li>
@@ -498,9 +503,9 @@ watch(
                             <h6
                               class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
                             >
-                              Elements
+                              业务4
                             </h6>
-                            <span class="text-sm">See all elements</span>
+                            <span class="text-sm">。。。简介。。。</span>
                           </div>
                           <img
                             :src="downArrow"
@@ -515,61 +520,61 @@ watch(
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'el-avatars' }"
                       >
-                        Avatars
+                        ......
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'el-badges' }"
                       >
-                        Badges
+                        ......
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'el-breadcrumbs' }"
                       >
-                        Breadcrumbs
+                        ......
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'el-buttons' }"
                       >
-                        Buttons
+                        ......
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'el-button-groups' }"
                       >
-                        Button Groups
+                        ......
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'el-dropdowns' }"
                       >
-                        Dropdowns
+                        ......
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'el-progress-bars' }"
                       >
-                        Progress Bars
+                        ......
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'el-toggles' }"
                       >
-                        Toggles
+                        ......
                       </RouterLink>
                       <RouterLink
                         class="dropdown-item ps-3 border-radius-md mb-1"
                         :to="{ name: 'el-typography' }"
                       >
-                        Typography
+                        ......
                       </RouterLink>
                     </div>
                   </li>
                 </ul>
               </div>
-              <div class="row d-lg-none">
+              <!-- <div class="row d-lg-none">
                 <div class="col-md-12">
                   <div class="d-flex mb-2">
                     <div
@@ -751,7 +756,7 @@ watch(
                     Typography
                   </RouterLink>
                 </div>
-              </div>
+              </div> -->
             </div>
           </li>
           <li class="nav-item dropdown dropdown-hover mx-2">
@@ -768,7 +773,7 @@ watch(
                 :class="getTextColor()"
                 >article</i
               >
-              Docs
+              招聘
               <img
                 :src="getArrowColor()"
                 alt="down-arrow"
@@ -794,12 +799,9 @@ watch(
                       <h6
                         class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
                       >
-                        Getting Started
+                        开发部门
                       </h6>
-                      <span class="text-sm"
-                        >All about overview, quick start, license and
-                        contents</span
-                      >
+                      <span class="text-sm">具体要求 & 与投递简历</span>
                     </a>
                   </li>
                   <li class="nav-item list-group-item border-0 p-0">
@@ -810,11 +812,9 @@ watch(
                       <h6
                         class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
                       >
-                        Foundation
+                        销售部门
                       </h6>
-                      <span class="text-sm"
-                        >See our colors, icons and typography</span
-                      >
+                      <span class="text-sm">具体要求 & 与投递简历</span>
                     </a>
                   </li>
                   <li class="nav-item list-group-item border-0 p-0">
@@ -825,17 +825,14 @@ watch(
                       <h6
                         class="dropdown-header text-dark font-weight-bolder d-flex justify-content-cente align-items-center p-0"
                       >
-                        Components
+                        其他
                       </h6>
-                      <span class="text-sm"
-                        >Explore our collection of fully designed
-                        components</span
-                      >
+                      <span class="text-sm">简历投递</span>
                     </a>
                   </li>
                 </ul>
               </div>
-              <div class="row d-lg-none">
+              <!-- <div class="row d-lg-none">
                 <div class="col-md-12 g-0">
                   <a
                     class="dropdown-item py-2 ps-3 border-radius-md"
@@ -905,10 +902,10 @@ watch(
                     >
                   </a>
                 </div>
-              </div>
+              </div> -->
             </div>
           </li>
-          <li class="nav-item dropdown dropdown-hover mx-2">
+          <!-- <li class="nav-item dropdown dropdown-hover mx-2">
             <a
               href="https://www.github.com/creativetimofficial/vue-material-kit"
               class="nav-link d-flex cursor-pointer align-items-center"
@@ -928,7 +925,7 @@ watch(
               </svg>
               Github
             </a>
-          </li>
+          </li> -->
         </ul>
         <ul class="navbar-nav d-lg-block d-none">
           <li class="nav-item">
@@ -936,7 +933,8 @@ watch(
               :href="action.route"
               class="btn btn-sm mb-0"
               :class="action.color"
-              onclick="smoothToPricing('pricing-soft-ui')"
+              :style="{ width: '100px' }"
+              onclick=""
               >{{ action.label }}</a
             >
           </li>

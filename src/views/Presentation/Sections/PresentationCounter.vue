@@ -11,10 +11,9 @@ import DefaultCounterCard from "../../../examples/cards/counterCards/DefaultCoun
             <div class="col-md-4 position-relative">
               <DefaultCounterCard
                 color="success"
-                title="Coded Elements"
-                description="From buttons, to inputs, navbars, alerts or cards, you are
-                  covered"
-                :count="70"
+                title="已开发项目"
+                description="可替换标题，数字或者简介，也可以拿掉。暂时保留这个feature"
+                :count="99"
                 suffix="+"
                 :duration="3000"
                 divider="vertical"
@@ -23,10 +22,9 @@ import DefaultCounterCard from "../../../examples/cards/counterCards/DefaultCoun
             <div class="col-md-4 position-relative">
               <DefaultCounterCard
                 color="success"
-                title="Design Blocks"
-                description="Mix the sections, change the colors and unleash your
-                  creativity"
-                :count="15"
+                title="团队人数"
+                description="可替换标题，数字或者简介，也可以拿掉。暂时保留这个feature"
+                :count="99"
                 suffix="+"
                 :duration="3000"
                 divider="vertical"
@@ -35,10 +33,10 @@ import DefaultCounterCard from "../../../examples/cards/counterCards/DefaultCoun
             <div class="col-md-4">
               <DefaultCounterCard
                 color="success"
-                title="Pages"
-                description="Save 3-4 weeks of work when you use our pre-made pages for
-                  your website"
-                :count="4"
+                title="合作伙伴"
+                description="可替换标题，数字或者简介，也可以拿掉。暂时保留这个feature"
+                :count="99"
+                suffix="+"
                 :duration="3000"
               />
             </div>
